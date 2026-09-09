@@ -67,43 +67,85 @@
       <!-- 히어로 타이틀 -->
       <section class="retro-card hero-card">
         <h1>bissal Gallery</h1>
-        <p>자연의 숨결과 함께 읽는 이야기</p>
+        <p>도시를 벗어나 여행하자</p>
       </section>
 
-      <!-- 등장인물 섹션 -->
+      <!-- 등장인물 섹션 (5개) -->
       <section class="retro-card">
         <div class="card-header">Characters</div>
         <div class="card-body">
           <div class="character-grid">
+            
             <div class="character-card">
-              <img src="images/char1.png" alt="별고양이" onclick="openCharacterProfile('char1', '별고양이', '별의 기운을 담은 신비로운 고양이입니다.')">
-              <p class="char-title">별고양이</p>
-              <button class="pixel-btn" onclick="bookmarkItem('character', 'char1', '별고양이')">★ 찜하기</button>
+              <img src="https://picsum.photos/200/200?random=1" alt="캐릭터 1" onclick="openCharacterProfile('char1', '캐릭터 1', '첫 번째 캐릭터에 대한 상세 설명입니다.')">
+              <p class="char-title">캐릭터 1</p>
+              <button class="pixel-btn" onclick="bookmarkItem('character', 'char1', '캐릭터 1')">★ 찜하기</button>
             </div>
+
             <div class="character-card">
-              <img src="images/char2.png" alt="숲고양이" onclick="openCharacterProfile('char2', '숲고양이', '숲을 수호하는 용맹한 고양이입니다.')">
-              <p class="char-title">숲고양이</p>
-              <button class="pixel-btn" onclick="bookmarkItem('character', 'char2', '숲고양이')">★ 찜하기</button>
+              <img src="https://picsum.photos/200/200?random=2" alt="캐릭터 2" onclick="openCharacterProfile('char2', '캐릭터 2', '두 번째 캐릭터에 대한 상세 설명입니다.')">
+              <p class="char-title">캐릭터 2</p>
+              <button class="pixel-btn" onclick="bookmarkItem('character', 'char2', '캐릭터 2')">★ 찜하기</button>
             </div>
+
+            <div class="character-card">
+              <img src="https://picsum.photos/200/200?random=3" alt="캐릭터 3" onclick="openCharacterProfile('char3', '캐릭터 3', '세 번째 캐릭터에 대한 상세 설명입니다.')">
+              <p class="char-title">캐릭터 3</p>
+              <button class="pixel-btn" onclick="bookmarkItem('character', 'char3', '캐릭터 3')">★ 찜하기</button>
+            </div>
+
+            <div class="character-card">
+              <img src="https://picsum.photos/200/200?random=4" alt="캐릭터 4" onclick="openCharacterProfile('char4', '캐릭터 4', '네 번째 캐릭터에 대한 상세 설명입니다.')">
+              <p class="char-title">캐릭터 4</p>
+              <button class="pixel-btn" onclick="bookmarkItem('character', 'char4', '캐릭터 4')">★ 찜하기</button>
+            </div>
+
+            <div class="character-card">
+              <img src="https://picsum.photos/200/200?random=5" alt="캐릭터 5" onclick="openCharacterProfile('char5', '캐릭터 5', '다섯 번째 캐릭터에 대한 상세 설명입니다.')">
+              <p class="char-title">캐릭터 5</p>
+              <button class="pixel-btn" onclick="bookmarkItem('character', 'char5', '캐릭터 5')">★ 찜하기</button>
+            </div>
+
           </div>
         </div>
       </section>
 
-      <!-- 일러스트 모음집 섹션 -->
+      <!-- 일러스트 모음집 섹션 (5개) -->
       <section id="gallery-section" class="retro-card">
         <div class="card-header">Gallery</div>
         <div class="card-body">
           <div class="illustration-grid">
+            
             <div class="illustration-card">
-              <img src="images/illust1.jpg" alt="기차" onclick="openImageModal('images/illust1.jpg', '기차')">
-              <p class="illust-title">기차</p>
-              <button class="pixel-btn" onclick="bookmarkItem('illust', 'illust1', '기차', 'images/illust1.jpg')">★ 찜하기</button>
+              <img src="https://picsum.photos/400/600?random=11" alt="일러스트 1" onclick="openImageModal('https://picsum.photos/800/1200?random=11', '일러스트 1')">
+              <p class="illust-title">일러스트 1</p>
+              <button class="pixel-btn" onclick="bookmarkItem('illust', 'illust1', '일러스트 1', 'https://picsum.photos/400/600?random=11')">★ 찜하기</button>
             </div>
+
             <div class="illustration-card">
-              <img src="images/illust2.jpg" alt="푸른 숲" onclick="openImageModal('images/illust2.jpg', '푸른 숲')">
-              <p class="illust-title">푸른 숲</p>
-              <button class="pixel-btn" onclick="bookmarkItem('illust', 'illust2', '푸른 숲', 'images/illust2.jpg')">★ 찜하기</button>
+              <img src="https://picsum.photos/400/600?random=12" alt="일러스트 2" onclick="openImageModal('https://picsum.photos/800/1200?random=12', '일러스트 2')">
+              <p class="illust-title">일러스트 2</p>
+              <button class="pixel-btn" onclick="bookmarkItem('illust', 'illust2', '일러스트 2', 'https://picsum.photos/400/600?random=12')">★ 찜하기</button>
             </div>
+
+            <div class="illustration-card">
+              <img src="https://picsum.photos/400/600?random=13" alt="일러스트 3" onclick="openImageModal('https://picsum.photos/800/1200?random=13', '일러스트 3')">
+              <p class="illust-title">일러스트 3</p>
+              <button class="pixel-btn" onclick="bookmarkItem('illust', 'illust3', '일러스트 3', 'https://picsum.photos/400/600?random=13')">★ 찜하기</button>
+            </div>
+
+            <div class="illustration-card">
+              <img src="https://picsum.photos/400/600?random=14" alt="일러스트 4" onclick="openImageModal('https://picsum.photos/800/1200?random=14', '일러스트 4')">
+              <p class="illust-title">일러스트 4</p>
+              <button class="pixel-btn" onclick="bookmarkItem('illust', 'illust4', '일러스트 4', 'https://picsum.photos/400/600?random=14')">★ 찜하기</button>
+            </div>
+
+            <div class="illustration-card">
+              <img src="https://picsum.photos/400/600?random=15" alt="일러스트 5" onclick="openImageModal('https://picsum.photos/800/1200?random=15', '일러스트 5')">
+              <p class="illust-title">일러스트 5</p>
+              <button class="pixel-btn" onclick="bookmarkItem('illust', 'illust5', '일러스트 5', 'https://picsum.photos/400/600?random=15')">★ 찜하기</button>
+            </div>
+
           </div>
         </div>
       </section>
@@ -155,7 +197,7 @@
 
   <div id="image-modal" class="modal hidden" onclick="closeModal('image-modal')">
     <div class="image-modal-content" onclick="event.stopPropagation()">
-      <button class="close-btn" onclick="closeModal('image-modal')">X</button>
+      <button class="close-btn" onclick="closeModal('closeModal('image-modal')')">X</button>
       <img id="modal-full-image" src="" alt="일러스트 원본">
       <p id="modal-image-title" class="modal-title-text"></p>
     </div>
