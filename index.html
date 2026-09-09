@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>작품 소개 사이트</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- 상단 고정바 -->
+  <header class="top-bar">
+    <div class="logo-container">
+      <img src="images/logo.png" alt="로고 영역" class="site-logo">
+    </div>
+    
+    <nav class="nav-controls">
+      <button id="theme-toggle-btn" onclick="toggleTheme()">다크모드 / 라이트모드</button>
+      <div class="font-controls">
+        <button onclick="changeFontSize(-1)">가-</button>
+        <button onclick="changeFontSize(1)">가+</button>
+      </div>
+      <button onclick="openModal('worldview-modal')">세계관</button>
+      <button onclick="scrollToSection('gallery-section')">일러스트 모음집</button>
+    </nav>
+  </header>
+
+  <!-- 메인 배너 영역 -->
+  <section class="hero-section">
+    <div class="hero-text">
+      <h1>작품 제목</h1>
+      <p>자연의 숨결과 함께 읽는 이야기</p>
+    </div>
+  </section>
+
+  <!-- 메인 콘텐츠 및 사이드바 -->
+  <div class="main-container">
+    
+    <main class="content-area">
+      
+      <!-- 작가 프로필 영역 (접기/펼치기) -->
+      <section class="author-profile-card">
+        <button class="profile-toggle-btn" onclick="toggleAuthorProfile()">
+          <span>작가 프로필</span>
+          <span id="profile-toggle-icon">열기</span>
+        </button>
+        
+        <div id="author-profile-content" class="author-profile-content hidden">
+          <div class="author-profile-inner">
+            <div class="author-image-box">
+              <img src="images/author_profile.jpg" alt="작가 프로필" class="author-img">
+            </div>
+            <div class="author-info">
+              <p class="author-name">작가 이름 (또는 닉네임)</p>
+              <p class="author-bio">
+                안녕하세요. 일상과 자연의 감성을 담아 글을 쓰는 작가입니다. 
+                작품에 대한 소식과 일러스트는 아래 SNS 채널에서 확인하실 수 있습니다.
+              </p>
+              
+              <div class="sns-link-group">
+                <a href="https://postype.com" target="_blank" rel="noopener noreferrer" class="sns-btn">포스타입</a>
+                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="sns-btn">X (트위터)</a>
+                <a href="https://blog.naver.com" target="_blank" rel="noopener noreferrer" class="sns-btn">블로그</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 주의사항 상자 -->
+      <section class="notice-section">
+        <div class="notice-box">
+          <p class="notice-title">안내사항</p>
+          <p class="notice-text">
+            본 작품은 본래 내수용 작품이었으나 "인터넷친구"분들의 허락으로 작업하고 있습니다.<br>
+            팬아트, 팬소설 제작 시 수위가 과도하게 높거나 선을 넘는 행위는 금지합니다.
+          </p>
+        </div>
+      </section>
+
+      <!-- 등장인물 목록 -->
+      <section class="character-section">
+        <h2>등장인물</h2>
+        <div class="character-grid">
+          <div class="character-card">
+            <img src="images/char1.png" alt="별고양이" onclick="openCharacterProfile('char1', '별고양이', '별의 기운을 담은 신비로운 고양이입니다.')">
+            <p class="char-title">별고양이</p>
+            <button onclick="bookmarkItem('character', 'char1', '별고양이')">찜하기</button>
+          </div>
+          <div class="character-card">
+            <img src="images/char2.png" alt="숲고양이" onclick="openCharacterProfile('char2', '숲고양이', '숲을 수호하는 용맹한 고양이입니다.')">
+            <p class="char-title">숲고양이</p>
+            <button onclick="bookmarkItem('character', 'char2', '숲고양이')">찜하기</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- 일러스트 모음집 (세로 비율 갤러리 + 제목 표시) -->
+      <section id="gallery-section" class="gallery-section">
+        <h2>일러스트 모음집</h2>
+        <div class="illustration-grid">
+          
+          <div class="illustration-card">
+            <img src="images/illust1.jpg" alt="기차" onclick="openImageModal('images/illust1.jpg', '기차')">
+            <p class="illust-title">기차</p>
+            <button onclick="bookmarkItem('illust', 'illust1', '기차', 'images/illust1.jpg')">찜하기</button>
+          </div>
+
+          <div class="illustration-card">
+            <img src="images/illust2.jpg" alt="푸른 숲" onclick="openImageModal('images/illust2.jpg', '푸른 숲')">
+            <p class="illust-title">푸른 숲</p>
+            <button onclick="bookmarkItem('illust', 'illust2', '푸른 숲', 'images/illust2.jpg')">찜하기</button>
+          </div>
+
+        </div>
+      </section>
+
+    </main>
+
+    <!-- 오른쪽 고정 사이드바: 찜한 항목 -->
+    <aside class="sidebar">
+      <h3>내가 찜한 항목</h3>
+      
+      <h4>찜한 캐릭터</h4>
+      <ul id="saved-characters-list"></ul>
+
+      <h4>찜한 일러스트</h4>
+      <div id="saved-illustrations-list" class="saved-illust-grid"></div>
+    </aside>
+
+  </div>
+
+  <!-- 세계관 모달 팝업 -->
+  <div id="worldview-modal" class="modal hidden" onclick="closeModal('worldview-modal')">
+    <div class="modal-content" onclick="event.stopPropagation()">
+      <button class="close-btn" onclick="closeModal('worldview-modal')">닫기</button>
+      <h2>세계관 설명</h2>
+      <p>여기에 전체 세계관, 대륙, 역사 등의 설명을 작성하세요.</p>
+    </div>
+  </div>
+
+  <!-- 캐릭터 프로필 모달 팝업 -->
+  <div id="character-modal" class="modal hidden" onclick="closeModal('character-modal')">
+    <div class="modal-content" onclick="event.stopPropagation()">
+      <button class="close-btn" onclick="closeModal('character-modal')">닫기</button>
+      <h2 id="char-name">캐릭터 이름</h2>
+      <p id="char-desc">캐릭터 상세 정보 및 성격...</p>
+    </div>
+  </div>
+
+  <!-- 원본 일러스트 크게보기 모달 팝업 -->
+  <div id="image-modal" class="modal hidden" onclick="closeModal('image-modal')">
+    <div class="image-modal-content" onclick="event.stopPropagation()">
+      <button class="close-btn" onclick="closeModal('image-modal')">닫기</button>
+      <img id="modal-full-image" src="" alt="일러스트 원본">
+      <p id="modal-image-title" class="modal-title-text"></p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
